@@ -1,0 +1,51 @@
+name: all_animation_git
+description: "All animations..."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # cupertino icons
+  cupertino_icons: ^1.0.8
+
+  #  launcher icons
+  flutter_launcher_icons: ^0.14.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # link
+  flutter_lints: ^5.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: 'assets/icons/ic_launcher.png'
+  adaptive_icon_foreground: 'assets/icons/ic_launcher.png'
+  adaptive_icon_background: '#ffffff'
+  window:
+    generate: true
+    icon_size: 48.0
+    image_path: 'assets/icons/ic_launcher.png'
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+  #   - images/a_dot_ham.jpeg
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic

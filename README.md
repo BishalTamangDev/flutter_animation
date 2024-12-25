@@ -1,0 +1,1 @@
+# This repository contains all the available animations in flutter.
