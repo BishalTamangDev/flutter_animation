@@ -56,35 +56,39 @@ class _RippleEffectState extends State<RippleEffect>
           spacing: 16.0,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
-              alignment: Alignment(0, 0),
-              children: [
-                ...radii.map(
-                  (radius) => Opacity(
-                    opacity: 1 - animationController.value,
-                    child: Container(
-                      width: radius * animationController.value,
-                      height: radius * animationController.value,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        shape: BoxShape.circle,
+            SizedBox(
+              height: 150.0,
+              child: Stack(
+                alignment: Alignment(0, 0),
+                children: [
+                  ...radii.map(
+                        (radius) => Opacity(
+                      opacity: 1 - animationController.value,
+                      child: Container(
+                        width: radius * animationController.value,
+                        height: radius * animationController.value,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade300,
+                          shape: BoxShape.circle,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    if (animationController.isAnimating) {
-                      setState(() {
-                        animationController.value = 0;
-                        animationController.dispose();
-                      });
-                    }
-                  },
-                  icon: Icon(Icons.cancel_outlined),
-                ),
-              ],
+                  IconButton(
+                    onPressed: () {
+                      if (animationController.isAnimating) {
+                        setState(() {
+                          animationController.value = 0;
+                          animationController.dispose();
+                        });
+                      }
+                    },
+                    icon: Icon(Icons.back_hand_rounded),
+                  ),
+                ],
+              ),
             ),
+            const Text("Click on the icon to stop the ripple animation."),
           ],
         ),
       ),
