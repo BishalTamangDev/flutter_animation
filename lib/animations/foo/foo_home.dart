@@ -1,3 +1,4 @@
+import 'package:all_animation_git/shared/widgets/common_appbar.dart';
 import 'package:flutter/material.dart';
 
 class FooHome extends StatefulWidget {
@@ -17,10 +18,7 @@ class _FooHomeState extends State<FooHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Foo Animation"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Foo Animation"),
       body: Center(
         child: Column(
           spacing: 16.0,

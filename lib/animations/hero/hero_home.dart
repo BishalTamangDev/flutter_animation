@@ -1,6 +1,8 @@
 import 'package:all_animation_git/animations/hero/hero_detail.dart';
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/common_appbar.dart';
+
 class HeroHome extends StatefulWidget {
   const HeroHome({super.key});
 
@@ -15,10 +17,7 @@ class _HeroHomeState extends State<HeroHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Hero Animation"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Hero Animation"),
       body: Center(
         child: Column(
           spacing: 16.0,
@@ -26,7 +25,6 @@ class _HeroHomeState extends State<HeroHome> {
           children: [
             Hero(
               tag: 'image-1',
-
               child: CircleAvatar(
                 radius: 80.0,
                 backgroundImage: AssetImage('assets/images/image-1.jpg'),

@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/common_appbar.dart';
+
 class TweenHome extends StatefulWidget {
   const TweenHome({super.key});
 
@@ -36,10 +38,7 @@ class _TweenHomeState extends State<TweenHome>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Tween Animation"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Tween Animation"),
       body: Center(
         child: Column(
           spacing: 16.0,

@@ -1,55 +1,23 @@
 import 'package:all_animation_git/animations/foo/foo_home.dart';
 import 'package:all_animation_git/animations/hero/hero_home.dart';
+import 'package:all_animation_git/animations/lottie/lottie_home.dart';
 import 'package:all_animation_git/animations/opacity/opacity_home.dart';
 import 'package:all_animation_git/animations/ripple_effect/ripple_effect_home.dart';
+import 'package:all_animation_git/animations/rive/rive_home.dart';
 import 'package:all_animation_git/animations/tween/tween_home.dart';
+import 'package:all_animation_git/shared/constants/pages.dart';
+import 'package:all_animation_git/shared/widgets/common_appbar.dart';
 import 'package:flutter/material.dart';
 
 import 'animations/crossfade/crossfade_home.dart';
 
 class Initial extends StatelessWidget {
-  Initial({super.key});
-
-  final List<Map<String, dynamic>> _animationPages = [
-    {
-      'title': 'Crossfade',
-      'description':
-          'Smoothly transitions between two UI elements or screens by gradually increasing the opacity of one while decreasing the other.',
-    },
-    {
-      'title': 'Foo',
-      'description':
-          'Refers to a generic placeholder animation used as an example or test in programming contexts.',
-    },
-    {
-      'title': 'Hero',
-      'description':
-          'Transforms a shared element between two screens or states, maintaining continuity and visual connection during navigation.',
-    },
-    {
-      'title': 'Opacity',
-      'description':
-          'Gradually changes the transparency of an element, making it appear or disappear smoothly.',
-    },
-    {
-      'title': 'Ripple Effect',
-      'description':
-          'Simulates a water ripple emanating from a touchpoint, often used in button or touch interactions.',
-    },
-    {
-      'title': 'Tween',
-      'description':
-          'Interpolates properties like position, size, or color over time, creating smooth transitions between defined states.',
-    },
-  ];
+  const Initial({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Animation App"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Animation App"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -57,7 +25,7 @@ class Initial extends StatelessWidget {
             spacing: 16.0,
             children: [
               const SizedBox(height: 0.0),
-              ..._animationPages.map(
+              ...animationPages.map(
                 (animationPage) => Card(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
@@ -77,10 +45,14 @@ class Initial extends StatelessWidget {
                                   return FooHome();
                                 case 'Hero':
                                   return HeroHome();
+                                case 'Lottie':
+                                  return LottieHome();
                                 case 'Opacity':
                                   return OpacityHome();
                                 case 'Ripple Effect':
                                   return RippleEffect();
+                                case 'Rive':
+                                  return RiveHome();
                                 case 'Tween':
                                   return TweenHome();
                                 default:

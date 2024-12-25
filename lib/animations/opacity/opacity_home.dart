@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/common_appbar.dart';
+
 class OpacityHome extends StatefulWidget {
   const OpacityHome({super.key});
 
@@ -15,10 +17,7 @@ class _OpacityHomeState extends State<OpacityHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Opacity Animation"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Opacity Animation"),
       body: Center(
         child: Column(
           spacing: 16.0,

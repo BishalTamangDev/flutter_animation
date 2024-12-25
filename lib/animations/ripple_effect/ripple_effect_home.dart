@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/common_appbar.dart';
+
 class RippleEffect extends StatefulWidget {
   const RippleEffect({super.key});
 
@@ -47,10 +49,7 @@ class _RippleEffectState extends State<RippleEffect>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Ripple Effect Animation"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Ripple Effect Animation"),
       body: Center(
         child: Column(
           spacing: 16.0,
@@ -62,7 +61,7 @@ class _RippleEffectState extends State<RippleEffect>
                 alignment: Alignment(0, 0),
                 children: [
                   ...radii.map(
-                        (radius) => Opacity(
+                    (radius) => Opacity(
                       opacity: 1 - animationController.value,
                       child: Container(
                         width: radius * animationController.value,

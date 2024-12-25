@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/common_appbar.dart';
+
 class CrossFadeHome extends StatefulWidget {
   const CrossFadeHome({super.key});
 
@@ -14,10 +16,7 @@ class _CrossFadeState extends State<CrossFadeHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Crossfade Animation"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Crossfade Animation"),
       body: Center(
         child: Column(
           spacing: 16.0,

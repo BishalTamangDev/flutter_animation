@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/common_appbar.dart';
+
 class HeroDetail extends StatefulWidget {
   const HeroDetail({super.key});
 
@@ -11,10 +13,7 @@ class _HeroDetailState extends State<HeroDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Hero - Detail"),
-        centerTitle: true,
-      ),
+      appBar: CommonAppBar(title: "Hero Animation"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,7 +22,6 @@ class _HeroDetailState extends State<HeroDetail> {
               tag: 'image-1',
               child: Image.asset('assets/images/image-1.jpg'),
             ),
-
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
               child: Text("Hello!"),
